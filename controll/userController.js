@@ -24,6 +24,26 @@ export const userController = {
 
     response.status(404).send({ message: "User does not exist" });
   },
-  update: async function () {},
+  update: async function (request, response) {
+    const { id } = request.params;
+    const { email, name, password, phones } = request.body;
+
+    const user = await userModel.findByIdAndUpdate(
+      id,
+      {
+        email,
+        name,
+        password,
+        phones,
+      },
+      { new: true }
+    );
+
+    if (user) {
+      return response.send({ user });
+    }
+
+    response.status(404).send({ message: "User not found" });
+  },
   delete: async function () {},
 };
