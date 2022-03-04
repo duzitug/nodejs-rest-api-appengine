@@ -13,4 +13,17 @@ export const userController = {
 
     response.send(user);
   },
+  read: async function (request, response) {
+    const id = request.params.id;
+
+    const user = await userModel.findById(id);
+
+    if (user) {
+      return response.send(user);
+    }
+
+    response.status(404).send({ message: "User does not exist" });
+  },
+  update: async function () {},
+  delete: async function () {},
 };
