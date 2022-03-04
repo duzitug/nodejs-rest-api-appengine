@@ -5,6 +5,7 @@
   "private": true,
   "license": "Apache-2.0",
   "author": "Google Inc.",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/GoogleCloudPlatform/nodejs-docs-samples.git"
@@ -17,10 +18,14 @@
     "test": "mocha --exit test/*.test.js"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^6.2.4"
   },
   "devDependencies": {
     "mocha": "^9.0.0",
     "supertest": "^6.0.0"
+  },
+  "prettier": {
+    "semi": true
   }
 }
