@@ -1,6 +1,11 @@
 import userModel from "../model/userModel.js";
 
 export const userController = {
+  index: async function (request, response) {
+    const users = await userModel.find({}).lean();
+
+    response.json(users);
+  },
   create: async function (request, response) {
     const { email, password, phones, name } = request.body;
 
@@ -45,5 +50,19 @@ export const userController = {
 
     response.status(404).send({ message: "User not found" });
   },
-  delete: async function () {},
+  delete: async function (request, response) {
+    const { id } = request.params;
+
+    try {
+      const user = await userModel.findById(id);
+
+      if (user) {
+        await user.remove();
+
+        response.json({ message: "user Removed" });
+      }
+    } catch (error) {
+      response.status(400).json({ message: error.message });
+    }
+  },
 };
