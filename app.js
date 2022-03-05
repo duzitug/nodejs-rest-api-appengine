@@ -1,9 +1,9 @@
+("use strict");
+
 import mongoose from "mongoose";
 import express from "express";
 
 import userRouter from "./route/userRouter.js";
-
-("use strict");
 
 mongoose
   .connect("mongodb+srv://merciof:32722212@cluster0.jsnbu.mongodb.net/base2")
