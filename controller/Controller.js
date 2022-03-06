@@ -10,16 +10,9 @@ export class Controller {
   }
 
   async create(request, response) {
-    const { email, password, phones, name } = request.body;
+    const element = await this.model.create(request.body);
 
-    const user = await this.model.create({
-      email,
-      name,
-      password,
-      phones,
-    });
-
-    response.send(user);
+    response.send(element);
   }
 
   async read(request, response) {
@@ -35,36 +28,27 @@ export class Controller {
   }
 
   async update(request, response) {
-    const { id } = request.params;
-    const { email, name, password, phones, mensagem } = request.body;
-
-    const user = await this.model.findByIdAndUpdate(
-      id,
+    const element = await this.model.findByIdAndUpdate(
+      request.params.id,
+      request.body,
       {
-        email,
-        name,
-        password,
-        phones,
-        mensagem,
-      },
-      { new: true }
+        new: true,
+      }
     );
 
-    if (user) {
-      return response.send({ user });
+    if (element) {
+      return response.send({ element });
     }
 
-    response.status(404).send({ message: "User not found" });
+    response.status(404).send({ message: "Element not found" });
   }
 
   async delete(request, response) {
-    const { id } = request.params;
-
     try {
-      const user = await this.model.findById(id);
+      const element = await this.model.findById(request.params.id);
 
-      if (user) {
-        await user.remove();
+      if (element) {
+        await element.remove();
 
         response.json({ message: "Element Removed" });
       }
