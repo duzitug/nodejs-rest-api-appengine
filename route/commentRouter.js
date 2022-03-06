@@ -18,7 +18,10 @@ commentRouter.get(
   "/comentario/:id",
   commentController.read.bind(commentController)
 );
-// commentRouter.put("/comentario/:id", commentController.update);
+commentRouter.put(
+  "/comentario/:id",
+  commentController.update.bind(commentController)
+);
 commentRouter.delete(
   "/comentario/:id",
   commentController.delete.bind(commentController)
