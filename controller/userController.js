@@ -31,7 +31,7 @@ export const userController = {
   },
   update: async function (request, response) {
     const { id } = request.params;
-    const { email, name, password, phones } = request.body;
+    const { email, name, password, phones, mensagem } = request.body;
 
     const user = await userModel.findByIdAndUpdate(
       id,
@@ -40,6 +40,7 @@ export const userController = {
         name,
         password,
         phones,
+        mensagem,
       },
       { new: true }
     );
