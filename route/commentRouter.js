@@ -11,8 +11,12 @@ commentRouter.get(
   commentController.index.bind(commentController)
 );
 commentRouter.post(
-  "/comentario",
+  "/comentario/:userId",
   commentController.create.bind(commentController)
+);
+commentRouter.get(
+  "/getCommentsByUserId/:userId",
+  commentController.getCommentsByUserId.bind(commentController)
 );
 commentRouter.get(
   "/comentario/:id",
