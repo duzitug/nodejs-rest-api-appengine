@@ -4,7 +4,7 @@ export class Controller {
   }
 
   async index(request, response) {
-    const users = await this.model.find({}).lean();
+    const users = await this.model.find({}).limit(10).lean();
 
     response.json(users);
   }
