@@ -1,0 +1,64 @@
+{
+    "sqltools.connections": [
+        {
+            "askForPassword": true,
+            "connectionTimeout": 30,
+            "driver": "MySQL",
+            "name": "LocalHost",
+            "port": 33060,
+            "server": "127.0.0.1",
+            "username": "merciof",
+            "mysqlOptions": {
+                "authProtocol": "xprotocol"
+            }
+        },
+        {
+            "pgOptions": {
+                "ssl": {
+                    "rejectUnauthorized": false
+                }
+            },
+            "previewLimit": 50,
+            "server": "ec2-54-204-37-92.compute-1.amazonaws.com",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "sebo-rural-heroku",
+            "database": "d7vradn92g72o0",
+            "username": "rnjbzitbqkhoih",
+            "password": "6938fa3980b5b62d9925fefd45c23df1c7709467780b55045840388c1893a0ef"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "srt7kt8fw747.us-east-3.psdb.cloud",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "planetscale-mysql",
+            "password": "pscale_pw_SLT5KFyAhfrn2qIIHu4LjQ9kMZo70t_7DK8rCOoD3fo",
+            "username": "thgve8csgg3n",
+            "database": "planetscale-db"
+        }
+    ],
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#2f7c47",
+        "activityBar.activeBorder": "#422c74",
+        "activityBar.background": "#2f7c47",
+        "activityBar.foreground": "#e7e7e7",
+        "activityBar.inactiveForeground": "#e7e7e799",
+        "activityBarBadge.background": "#422c74",
+        "activityBarBadge.foreground": "#e7e7e7",
+        "sash.hoverBorder": "#2f7c47",
+        "statusBar.background": "#215732",
+        "statusBar.foreground": "#e7e7e7",
+        "statusBarItem.hoverBackground": "#2f7c47",
+        "statusBarItem.remoteBackground": "#215732",
+        "statusBarItem.remoteForeground": "#e7e7e7",
+        "titleBar.activeBackground": "#215732",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.inactiveBackground": "#21573299",
+        "titleBar.inactiveForeground": "#e7e7e799"
+    },
+    "peacock.color": "#215732"
+}
